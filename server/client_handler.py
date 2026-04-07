@@ -1,6 +1,6 @@
 import os
-from protocol import parse_request
-from streamer import stream_file
+from .protocol import parse_request
+from .streamer import stream_file
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MUSIC_FOLDER = os.path.join(BASE_DIR, "..", "music")   
