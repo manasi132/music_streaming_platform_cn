@@ -1,14 +1,11 @@
 import os
 import time
-import json
 from analysis.metrics import calculate_metrics
 
 CHUNK_SIZE = 1024
 
-# 🔧 Fix path properly
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 MUSIC_FOLDER = os.path.join(BASE_DIR, "..", "music")
-METRICS_FILE = os.path.join(BASE_DIR, "..", "analysis", "metrics.json")
 TXT_FILE = os.path.join(BASE_DIR, "..", "analysis", "metrics.txt")
 
 
@@ -67,27 +64,12 @@ def stream_file(conn, filename, addr=None):
         print("[STREAM ERROR]", e)
 
 
-# 💾 SAVE FUNCTION
 def save_metrics(new_data):
     try:
         # Ensure folder exists
-        os.makedirs(os.path.dirname(METRICS_FILE), exist_ok=True)
+        os.makedirs(os.path.dirname(TXT_FILE), exist_ok=True)
 
-        # Load existing data
-        if os.path.exists(METRICS_FILE):
-            with open(METRICS_FILE, "r") as f:
-                data = json.load(f)
-        else:
-            data = []
-
-        # Append new data
-        data.append(new_data)
-
-        # Save JSON
-        with open(METRICS_FILE, "w") as f:
-            json.dump(data, f, indent=4)
-
-        # Save TXT (optional)
+        # Save TXT
         with open(TXT_FILE, "a") as f:
             f.write(str(new_data) + "\n")
 
