@@ -1,7 +1,7 @@
 import socket
 import ssl
 import threading
-from client_handler import handle_client
+from .client_handler import handle_client
 
 HOST = "0.0.0.0"
 PORT = 8080
