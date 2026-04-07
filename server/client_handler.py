@@ -3,7 +3,7 @@ from protocol import parse_request
 from streamer import stream_file
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MUSIC_FOLDER = os.path.join(BASE_DIR, "..", "music")   # ⚠️ adjust if needed
+MUSIC_FOLDER = os.path.join(BASE_DIR, "..", "music")   
 
 def handle_client(conn, addr):
     print(f"[NEW CONNECTION] {addr}")
@@ -18,7 +18,7 @@ def handle_client(conn, addr):
 
             print(f"[REQUEST] {request}")
 
-            # 🔹 HANDLE LIST COMMAND
+            #HANDLE LIST COMMAND
             if request == "LIST":
                 try:
                     songs = os.listdir(MUSIC_FOLDER)
@@ -35,9 +35,9 @@ def handle_client(conn, addr):
                 except Exception as e:
                     conn.send(f"ERROR: {str(e)}".encode())
 
-                continue   # 🔥 IMPORTANT → don't go to streaming
+                continue   
 
-            # 🔹 HANDLE PLAY REQUEST
+            #HANDLE PLAY REQUEST
             filename = parse_request(request)
 
             if not filename:
@@ -50,7 +50,7 @@ def handle_client(conn, addr):
                 conn.send(b"ERROR: File not found")
                 continue
 
-            # 🔹 STREAM FILE
+            #STREAM FILE
             stream_file(conn, file_path)
 
     except Exception as e:
