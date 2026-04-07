@@ -1,0 +1,62 @@
+Latency,TotalTime,Throughput,TotalBytes
+0.0090,0.5982,4227494.69,2528802
+0.0024,0.7708,5095806.96,3927687
+0.0228,0.8521,4408620.97,3756761
+0.0036,0.8558,4389731.33,3756761
+0.0007,0.1692,23210656.43,3927690
+
+===== STREAM SESSION =====
+File        : song2.mp3
+Latency     : 0.0001 sec
+Total Time  : 1.3381 sec
+Throughput  : 2935231.48 bytes/sec
+Data Size   : 3927687 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song1.mp3
+Latency     : 0.0197 sec
+Total Time  : 1.1917 sec
+Throughput  : 2121950.30 bytes/sec
+Data Size   : 2528802 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song2.mp3
+Latency     : 0.0001 sec
+Total Time  : 0.6778 sec
+Throughput  : 5794701.48 bytes/sec
+Data Size   : 3927687 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song2.mp3
+Latency     : 0.0001 sec
+Total Time  : 0.7743 sec
+Throughput  : 5072793.86 bytes/sec
+Data Size   : 3927687 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song2.mp3
+Latency     : 0.0098 sec
+Total Time  : 1.3171 sec
+Throughput  : 2982180.91 bytes/sec
+Data Size   : 3927687 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song1.mp3
+Latency     : 0.0090 sec
+Total Time  : 0.3032 sec
+Throughput  : 8339903.63 bytes/sec
+Data Size   : 2528802 bytes
+===========================
+
+===== STREAM SESSION =====
+File        : song2.mp3
+Latency     : 0.0001 sec
+Total Time  : 1.0160 sec
+Throughput  : 3865708.35 bytes/sec
+Data Size   : 3927687 bytes
+===========================
