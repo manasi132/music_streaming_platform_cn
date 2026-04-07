@@ -4,14 +4,13 @@ import time
 import sys
 import os
 
-# Fix import path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from analysis.metrics import calculate_metrics
 from buffer import Buffer
 from player import AudioPlayer
 
-HOST = "127.0.0.1"   # 🔥 change to server IP for multi-device
+HOST = "127.0.0.1"   
 PORT = 8080
 
 
@@ -30,7 +29,7 @@ def main():
 
     print("[CONNECTED]")
 
-    # 🔥 GET SONG LIST
+    #GET SONG LIST
     secure_socket.sendall(b"LIST")
     song_data = secure_socket.recv(4096).decode()
 
@@ -48,7 +47,7 @@ def main():
         response = secure_socket.recv(1024)
 
         if response.startswith(b"ERROR"):
-            print("❌ File not found")
+            print("File not found")
             continue
 
         print("[STREAMING STARTED]")
@@ -81,12 +80,12 @@ def main():
 
             buffer.add_chunk(data)
 
-            # 🔥 chunk logging
+            #chunk logging
             chunk_count += 1
             total_received += len(data)
-            print(f"📦 Chunk {chunk_count} received ({len(data)} bytes) | Total: {total_received} bytes")
+            print(f"Chunk {chunk_count} received ({len(data)} bytes) | Total: {total_received} bytes")
 
-            # 🎧 start playback
+            #start playback
             if not started and buffer.get_total_bytes() > BUFFER_THRESHOLD:
                 player.play()
                 started = True
@@ -96,7 +95,7 @@ def main():
 
         print("[DOWNLOAD COMPLETE]")
 
-        # 📊 metrics
+        # metrics
         latency, total_time, throughput = calculate_metrics(
             start_time,
             first_packet_time,
@@ -104,13 +103,13 @@ def main():
             buffer.get_total_bytes()
         )
 
-        print("\n📊 PERFORMANCE METRICS")
+        print("\nPERFORMANCE METRICS")
         print(f"Latency     : {latency:.4f} sec")
         print(f"Total Time  : {total_time:.4f} sec")
         print(f"Throughput  : {throughput:.2f} bytes/sec")
         print(f"Data Size   : {buffer.get_total_bytes()} bytes")
 
-        # 🔥 SAVE METRICS
+        #SAVE METRICS
         log_path = os.path.join("analysis", "performance_log.txt")
 
         with open(log_path, "a") as f:
@@ -122,7 +121,7 @@ def main():
             f.write(f"Data Size   : {buffer.get_total_bytes()} bytes\n")
             f.write("===========================\n")
 
-        print(f"📁 Metrics saved to {log_path}")
+        print(f"Metrics saved to {log_path}")
 
     secure_socket.close()
 
