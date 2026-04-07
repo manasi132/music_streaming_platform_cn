@@ -7,8 +7,8 @@ import os
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from analysis.metrics import calculate_metrics
-from buffer import Buffer
-from player import AudioPlayer
+from .buffer import Buffer
+from .player import AudioPlayer
 
 HOST = "127.0.0.1"   
 PORT = 8080
