@@ -3,7 +3,7 @@ import time
 def calculate_metrics(start_time, first_packet_time, end_time, total_bytes):
     print("\n[CALCULATING METRICS]")
 
-    # Latency = time until first packet sent
+    # latency is the time until first packet sent
     if first_packet_time:
         latency = first_packet_time - start_time
     else:
