@@ -51,7 +51,7 @@ def handle_client(conn, addr):
                 continue
 
             #STREAM FILE
-            stream_file(conn, file_path)
+            stream_file(conn, file_path,addr)
 
     except Exception as e:
         print(f"[CLIENT ERROR] {addr} -> {e}")
