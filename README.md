@@ -97,10 +97,12 @@ music_streaming_platform_cn/
 
 * Streams audio in chunks (buffer-based)
 * Supports multiple songs
+  
 
 ###  Song Listing
 
 * Clients can request available songs using `LIST`
+  **Note:** Sample audio files are used for demonstration purposes only.
 
 ###  Buffer Management
 
