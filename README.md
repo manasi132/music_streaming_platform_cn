@@ -1,6 +1,6 @@
-# 🎧 Online Music Streaming Server
+#  Online Music Streaming Server
 
-## 📌 Overview
+##  Overview
 
 This project implements a **secure client-server audio streaming system** using Python. The system allows multiple clients to request and stream audio files from a centralized server over a **TCP connection secured with SSL/TLS**.
 
@@ -14,7 +14,7 @@ It demonstrates key concepts in:
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Traditional file transfer systems lack efficient real-time streaming, buffering, and secure transmission mechanisms.
 
@@ -28,7 +28,7 @@ This project aims to:
 
 ---
 
-## 🏗️ System Architecture
+##  System Architecture
 
 ```
 Client  <==== SSL/TCP ====>  Server
@@ -57,7 +57,7 @@ Buffering → Playback → Metrics Logging
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```
 music_streaming_platform_cn/
 │
@@ -86,32 +86,32 @@ music_streaming_platform_cn/
 
 ---
 
-## ⚙️ Features
+##  Features
 
-### 🔐 Secure Communication
+###  Secure Communication
 
 * SSL/TLS encryption over TCP
 * Prevents unauthorized access and data interception
 
-### 🎵 Audio Streaming
+###  Audio Streaming
 
 * Streams audio in chunks (buffer-based)
 * Supports multiple songs
 
-### 📜 Song Listing
+###  Song Listing
 
 * Clients can request available songs using `LIST`
 
-### 📦 Buffer Management
+###  Buffer Management
 
 * Client buffers data before playback
 * Ensures smooth streaming without interruptions
 
-### ⏯️ Playback System
+###  Playback System
 
 * Audio plays via system’s default media player
 
-### 📊 Performance Metrics
+###  Performance Metrics
 
 Measured metrics include:
 
@@ -129,7 +129,7 @@ analysis/performance_log.txt
 
 ---
 
-## 📋 Prerequisites
+##  Prerequisites
 
 Make sure the following are installed:
 
@@ -147,21 +147,21 @@ Python libraries used:
 * time
 
 
-## 🚀 How to Run
+##  How to Run
 
-### 🔹 Step 1: Navigate to project root
+###  Step 1: Navigate to project root
 
 ```
 cd music_streaming_platform_cn
 ```
 
-### 🔹 Step 2: Start Server
+###  Step 2: Start Server
 
 ```
 python -m server.server
 ```
 
-### 🔹 Step 3: Start Client (new terminal)
+###  Step 3: Start Client (new terminal)
 
 ```
 python -m client.client
@@ -169,7 +169,7 @@ python -m client.client
 
 ---
 
-## 💡 Commands
+##  Commands
 
 | Command          | Description          |
 | ---------------- | -------------------- |
@@ -180,7 +180,7 @@ python -m client.client
 ---
 
 
-## 🧪 Performance Evaluation
+##  Performance Evaluation
 
 Metrics measured:
 
@@ -198,7 +198,7 @@ Test scenarios:
 
 ---
 
-## 🔧 Technologies Used
+##  Technologies Used
 
 * Python
 * Socket Programming
@@ -208,7 +208,7 @@ Test scenarios:
 
 ---
 
-## 🔒 Security Implementation
+##  Security Implementation
 
 * SSL wrapping of sockets
 * Certificate-based encryption
@@ -216,7 +216,7 @@ Test scenarios:
 
 ---
 
-## 👥 Contributors
+##  Contributors
 
 * Nishkaa V
 * Atharva D Kulkarni
@@ -224,7 +224,7 @@ Test scenarios:
 
 ---
 
-## 📌 Conclusion
+##  Conclusion
 
 This project successfully demonstrates a **secure, efficient, and scalable audio streaming system**, integrating networking, security, and performance evaluation concepts.
 
