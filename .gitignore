@@ -1,2 +1,5 @@
-*.pem
-*.key
+__pycache__/
+*.pyc
+cert.pem
+key.pem
+received_*.mp3
