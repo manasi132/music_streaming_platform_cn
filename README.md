@@ -40,19 +40,20 @@ Buffering → Playback → Metrics Logging
 ```
 
 ---
+
 ## Working of the System
 
 
-1.Client connects to the server using SSL/TCP.
-2.Secure handshake is established using certificates.
-3.Client sends command:
-    *LIST → server returns available songs
-    *GET <file> → server starts streaming
-4.Server reads audio file in chunks.
-5.Chunks are sent over encrypted connection.
-6.Client buffers received data.
-7.Buffered data is written to file / played.
-8.Metrics are recorded during transfer.
+* Client connects to the server using SSL/TCP.
+* Secure handshake is established using certificates.
+* Client sends command:
+  * LIST → server returns available songs
+  * GET <file> → server starts streaming
+* Server reads audio file in chunks.
+* Chunks are sent over encrypted connection.
+* Client buffers received data.
+* Buffered data is written to file / played.
+* Metrics are recorded during transfer.
 
 ---
 
