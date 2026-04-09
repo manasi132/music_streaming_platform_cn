@@ -40,8 +40,8 @@ Buffering → Playback → Metrics Logging
 ```
 
 ---
-Working of the System
-```
+## Working of the System
+
 
 1.Client connects to the server using SSL/TCP.
 2.Secure handshake is established using certificates.
@@ -53,6 +53,8 @@ Working of the System
 6.Client buffers received data.
 7.Buffered data is written to file / played.
 8.Metrics are recorded during transfer.
+
+---
 
 ## 📂 Project Structure
 
@@ -79,7 +81,7 @@ music_streaming_platform_cn/
 │
 ├── .gitignore
 └── README.md
-```
+
 
 ---
 
@@ -226,3 +228,4 @@ Test scenarios:
 This project successfully demonstrates a **secure, efficient, and scalable audio streaming system**, integrating networking, security, and performance evaluation concepts.
 
 ---
+
