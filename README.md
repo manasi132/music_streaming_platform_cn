@@ -1,18 +1,228 @@
-# Secure Audio Streaming System
+# 🎧 Online Music Streaming Server
 
-## Overview
-This project implements a secure client-server audio streaming system using Python. The system enables clients to request and receive audio files from a centralized server over a TCP connection secured with SSL/TLS encryption. It demonstrates concepts in network programming, concurrency, and real-time data streaming.
+## 📌 Overview
 
-## Features
-- Secure communication using SSL/TLS
-- Multithreaded server for handling multiple clients
-- Chunk-based file streaming
-- Client-side buffering for smooth playback
-- Performance metrics calculation (latency, throughput, total time)
+This project implements a **secure client-server audio streaming system** using Python. The system allows multiple clients to request and stream audio files from a centralized server over a **TCP connection secured with SSL/TLS**.
 
-## Usage
-Run the server:
-python server.py
+It demonstrates key concepts in:
 
-Run the client:
-python client.py
+* Computer Networks
+* Socket Programming
+* Secure Communication (SSL/TLS)
+* Buffer Management
+* Performance Evaluation
+
+---
+
+## 🎯 Problem Statement
+
+Traditional file transfer systems lack efficient real-time streaming, buffering, and secure transmission mechanisms.
+
+This project aims to:
+
+* Enable **real-time audio streaming**
+* Support **multiple concurrent clients**
+* Ensure **secure communication using SSL/TLS**
+* Implement **buffering for smooth playback**
+* Measure **network performance metrics**
+
+---
+
+## 🏗️ System Architecture
+
+```
+Client  <==== SSL/TCP ====>  Server
+   |                             |
+   |---- Request (GET/LIST) ---->|
+   |<--- Audio Stream (chunks) --|
+   |                             |
+Buffering → Playback → Metrics Logging
+```
+
+---
+Working of the System
+```
+
+1.Client connects to the server using SSL/TCP.
+2.Secure handshake is established using certificates.
+3.Client sends command:
+    *LIST → server returns available songs
+    *GET <file> → server starts streaming
+4.Server reads audio file in chunks.
+5.Chunks are sent over encrypted connection.
+6.Client buffers received data.
+7.Buffered data is written to file / played.
+8.Metrics are recorded during transfer.
+
+## 📂 Project Structure
+
+music_streaming_platform_cn/
+│
+├── server/
+│   ├── server.py
+│   ├── client_handler.py
+│   ├── streamer.py
+│   └── protocol.py
+│
+├── client/
+│   ├── client.py
+│   ├── buffer.py
+│   └── player.py
+│
+├── analysis/
+│   ├── metrics.py
+│   ├── metrics.txt
+│   └── performance_log.txt
+│
+├── music/
+│   └── (audio files)
+│
+├── .gitignore
+└── README.md
+```
+
+---
+
+## ⚙️ Features
+
+### 🔐 Secure Communication
+
+* SSL/TLS encryption over TCP
+* Prevents unauthorized access and data interception
+
+### 🎵 Audio Streaming
+
+* Streams audio in chunks (buffer-based)
+* Supports multiple songs
+
+### 📜 Song Listing
+
+* Clients can request available songs using `LIST`
+
+### 📦 Buffer Management
+
+* Client buffers data before playback
+* Ensures smooth streaming without interruptions
+
+### ⏯️ Playback System
+
+* Audio plays via system’s default media player
+
+### 📊 Performance Metrics
+
+Measured metrics include:
+
+* Latency
+* Total Transmission Time
+* Throughput
+* Data Size
+
+Logs stored in:
+
+```
+analysis/metrics.txt
+analysis/performance_log.txt
+```
+
+---
+
+## 📋 Prerequisites
+
+Make sure the following are installed:
+
+* Python 3.x
+* OpenSSL (for SSL certificates)
+* VLC Media Player / Default system media player
+
+
+Python libraries used:
+
+* socket
+* ssl
+* threading
+* os
+* time
+
+
+## 🚀 How to Run
+
+### 🔹 Step 1: Navigate to project root
+
+```
+cd music_streaming_platform_cn
+```
+
+### 🔹 Step 2: Start Server
+
+```
+python -m server.server
+```
+
+### 🔹 Step 3: Start Client (new terminal)
+
+```
+python -m client.client
+```
+
+---
+
+## 💡 Commands
+
+| Command          | Description          |
+| ---------------- | -------------------- |
+| `LIST`           | Show available songs |
+| `GET <filename>` | Stream a song        |
+| `exit`           | Close client         |
+
+---
+
+
+## 🧪 Performance Evaluation
+
+Metrics measured:
+
+* Latency (time to receive first chunk)
+* Throughput (bytes per second)
+* Total transmission time
+* File size
+
+Test scenarios:
+
+* Single client streaming
+* Multiple concurrent clients
+* Large vs small audio files
+
+
+---
+
+## 🔧 Technologies Used
+
+* Python
+* Socket Programming
+* SSL/TLS (Secure Sockets Layer)
+* Multithreading
+* File I/O
+
+---
+
+## 🔒 Security Implementation
+
+* SSL wrapping of sockets
+* Certificate-based encryption
+* Private key excluded using `.gitignore`
+
+---
+
+## 👥 Contributors
+
+* Nishkaa V
+* Atharva D Kulkarni
+* B R Manasi
+
+---
+
+## 📌 Conclusion
+
+This project successfully demonstrates a **secure, efficient, and scalable audio streaming system**, integrating networking, security, and performance evaluation concepts.
+
+---
