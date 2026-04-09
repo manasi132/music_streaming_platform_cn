@@ -201,6 +201,33 @@ Test scenarios:
 
 ---
 
+## Metrics Logging Design
+
+The system maintains two separate log files to capture performance metrics at different stages of the streaming process.
+
+### metrics.txt (Server-side Logging)
+
+* Stores metrics calculated at the server
+* Includes:
+
+  * Data transmission time
+  * Throughput (based on bytes sent)
+  * Server-side latency estimation
+* Represents how efficiently the server streams data
+
+### performance_log.txt (Client-side Logging)
+
+* Stores metrics calculated at the client
+* Includes:
+
+  * Actual latency experienced (time to first packet)
+  * Total download time
+  * Throughput (based on bytes received)
+* Represents real-world user experience
+
+Client-side metrics may differ from server-side metrics due to network latency, buffering delays, and playback overhead.
+
+---
 ##  Technologies Used
 
 * Python
