@@ -57,7 +57,7 @@ Buffering → Playback → Metrics Logging
 ---
 
 ## 📂 Project Structure
-
+```
 music_streaming_platform_cn/
 │
 ├── server/
@@ -81,7 +81,7 @@ music_streaming_platform_cn/
 │
 ├── .gitignore
 └── README.md
-
+```
 
 ---
 
