@@ -42,14 +42,14 @@ def stream_file(conn, filename, addr=None):
 
         print(f"[STREAM COMPLETE] {filename}")
 
-        # 📊 CALCULATE METRICS
+        #CALCULATE METRICS
         latency, total_time, throughput = calculate_metrics(
             start_time, first_packet_time, end_time, total_bytes
         )
 
         print(f"[METRICS] Latency: {latency:.4f}s | Time: {total_time:.4f}s | Throughput: {throughput:.2f} Bps")
 
-        # 💾 SAVE METRICS
+        #SAVE METRICS
         save_metrics({
             "client": str(addr),
             "song": filename,
